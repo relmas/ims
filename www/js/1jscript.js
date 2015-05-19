@@ -23,26 +23,19 @@ var gun_11; var gun_12; var gun_13; var gun_14; var gun_15; var gun_16; var gun_
 var gun_21; var gun_22; var gun_23; var gun_24; var gun_25; var gun_26; var gun_27; var gun_28; var gun_29;
 var enlem,boylam,baglanti;
 var onceki = null;
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
+document.addEventListener("deviceready", onDeviceReady, false);function onDeviceReady() {
 	location_start();
-}
-
-function location_start(){
+}function location_start(){
 	if ((window.localStorage.getItem("key") == null) || (window.localStorage.getItem("key") == "null")){
 		entry_show();
 		checkConnection();
 	} else {
 		changeFunc(window.localStorage.getItem("key"));	
 	}
-}
-
-function checkConnection() {
+}function checkConnection() {
 	var networkState = navigator.network.connection.type;
     
-	var states = {};
-
+	var states = {};	
 	states[Connection.UNKNOWN]  = 'Unknown connection';
 	states[Connection.ETHERNET] = 'Ethernet connection';
 	states[Connection.WIFI]     = 'WiFi connection';
@@ -60,43 +53,29 @@ function checkConnection() {
 		document.getElementById("bilgi").innerHTML = "Konum Tespit Ediliyor..";
 		checkGeolocation();
 	}
-}
-
-function checkGeolocation() {
+}function checkGeolocation() {
 	if (baglanti==true){
 		navigator.geolocation.getCurrentPosition(geo_onSuccess, geo_onError);
 	}
-}
-
-function geo_onSuccess(position) {
+}function geo_onSuccess(position) {
     enlem = position.coords.latitude;
     boylam = position.coords.longitude;
 	get_sehir();
-}
-
-function geo_onError(error) {
+}function geo_onError(error) {
 	document.getElementById("bilgi").innerHTML = "Otomatik seçim başarısız";
 	entry_show();
-}
-
-$.ajaxSetup	({
+}$.ajaxSetup	({
 	type: 'GET',
 	dataType: 'jsonp',
 	timeout: 10000,
 	cache: false,
-	complete: function(xhr, textStatus) {
-
-	},
-});
-
-var get_sehir= function() {
+	complete: function(xhr, textStatus) {	},
+});var get_sehir= function() {
 	var result = "http://www.poolbox.biz/pool_base/pool.php?";	
 	result = result + "enlem=" + enlem + "&boylam=" + boylam;
 	result = result + "&method=get_sehir&jsoncallback=?";
 	ajax_get_sehir(result);
-}
-
-var ajax_get_sehir = function(ajax_url) {
+}var ajax_get_sehir = function(ajax_url) {
     $.ajax({
         url: ajax_url,
         success: function(data, textStatus, xhr) {
@@ -110,33 +89,23 @@ var ajax_get_sehir = function(ajax_url) {
 				$('#girisyap').removeClass('btn disabled');
 				$("#girisyap").addClass('btn');
         	}   	
-		},
-
-        error: function(xhr, textStatus, errorThrown) { 
+		},        error: function(xhr, textStatus, errorThrown) { 
 			document.getElementById("bilgi").innerHTML = "Şehir Bulunamadı, kendin seç";
         }
-});}
-
-function giris_yap(){		//3g sehir bulduktan sonra giris butonuyla giris yapar
+});}function giris_yap(){		//3g sehir bulduktan sonra giris butonuyla giris yapar
 	window.localStorage.setItem("key",gelen_sehir);	
 	changeFunc(window.localStorage.getItem("key"));
-}
-
-function select_box(){
+}function select_box(){
 	var selectedValue = selectbox.options[selectbox.selectedIndex].value;
 	window.localStorage.setItem("key",selectedValue);
 	changeFunc(selectedValue);
-}
-
-function changeFunc(gelen) {
+}function changeFunc(gelen) {
 	sehir = gelen;
 	
 	div_change();
 	city();
 	gerisayim();
-}
-
-function gerisayim(){
+}function gerisayim(){
 	idate();
 	var kaldi;
 	var show_flag=0;
@@ -200,9 +169,7 @@ function gerisayim(){
 			}
 		}
 		
-	}else{																	//Ramazan Daha Başlamadı
-
-		if(now_time > ramazan_bitis_tarihi){                                        //Ramazan Bitti
+	}else{																	//Ramazan Daha Başlamadı		if(now_time > ramazan_bitis_tarihi){                                        //Ramazan Bitti
 			show_flag=0;
 			
 		}	
@@ -681,7 +648,8 @@ function idate(){
 		imsak_aksam="23:00:00";
 		gunun_sozu_bir=gunun_sozu[59];
 		gunun_sozu_iki=gunun_sozu[60];
-		
+
+
 	break;
 	}
 }	
@@ -3459,7 +3427,7 @@ gunun_sozu[5] = "Kim Ramazan orucunu tutar ve ona Şevval ayından altı gün il
 gunun_sozu[6] = "Beş vakit namaz, bir cuma namazı diğer cuma namazına, bir Ramazan diğer Ramazana hep kefarettirler. Büyük günah irtikab edilmedikçe aralarındaki   günahları affettirirler.<br>(Müslim, Taharet 14, (223))";
 gunun_sozu[7] = "Ramazan girip çıktığı halde günahları affedilmemiş olan insanın burnu sürtülsün. Anne ve babasına veya bunlardan birine yetişip de onlar sayesinde cennete girmeyen kimsenin de burnu sürtülsün. Ben yanında zikredildigim zaman bana salat okumayan kimsesinin de burnu sürtülsün.<br>(Tirmizi, Daavat 110, (3539))";
 gunun_sozu[8] = "İslam beş esas üzerine bina edilmiştir: Allah'tan başka ilah olmadığına ve Muhammed'in O'nun kulu ve elçisi olduguna şehadet etmek, namaz kılmak, oruç tutmak, Kabe'ye haccetmek, Ramazan orucu tutmak.(Buhari, İman 1; Müslim, İman 22 )";
-gunun_sozu[9] = "Oruç perdedir. Biriniz birgün oruç tutacak olursa kötü söz sarfetmesin, bağırıp çağırmasın. Birisi kendisine yakışıksız laf edecek veya kavga edecek olursa 'ben oruçluyum!' desin (ve ona bulaşmasın)<br>(Müslim, Sıyam 164, (1161))";
+gunun_sozu[9] = "Oruç perdedir. Biriniz birgün oruç tutacak olursa kotü soz sarfetmesin, bağırıp çağırmasın. Birisi kendisine yakışıksız laf edecek veya kavga edecek olursa 'ben oruçluyum!' desin (ve ona bulaşmasın)<br>(Müslim, Sıyam 164, (1161))";
 gunun_sozu[10] = "Kim Allah Teala yolunda bir gün oruç tutsa, Allah onunla ateş arasına, genişliği sema ile arz arasını tutan bir hendek kılar.<br>(Tirmizi, Cihad 3, (1624))";
 gunun_sozu[11] = "Cennette Reyyan denilen bir kapı vardır. Oradan sadece oruçlular girer. Oruçlular girdiler mi artık kapanır, kimse oradan giremez.' (Tirmizi'nin rivayetinde şu ziyade var: 'Oraya kim girerse ebediyyen susamaz.)<br>(Tirmizi, Savm 5)";
 gunun_sozu[12] = "Kim bir oruçluya iftar ettirirse, kendisine onun sevabı kadar sevap yazılır. Üstelik bu sebeple oruçlunun sevabından hiçbir eksilme olmaz.<br>(Tirmizi, Savm 82, (807); İbnu Mace, Sıyam 45, (1746))";
@@ -3467,49 +3435,47 @@ gunun_sozu[13] = "Kim oruçlu olduğu halde unutur ve yerse veya içerse orucunu
 gunun_sozu[14] = "Zahmetsiz ganimet kışta tutulan oruçtur.<br>(Tirmizi, Savm 74, (797))";
 gunun_sozu[15] = "Ramazan ayında, hasta veya ruhsat sahibi olmaksızın kim bir günlük orucunu yerse, bütün zaman boyu oruç tutsa bu orucu kaza edemez.<br>(Buhari, Savm 29; Tirmizi, Savm 27, (723))";
 gunun_sozu[16] = "Kim Allah Teala yolunda bir gün oruç tutsa, Allah onunla ateş arasına, genişliği sema ile arz arasını tutan bir hendek kılar.<br>(Tirmizi, Cihâd 3, (1624))";
-gunun_sozu[17] = "Resulullah (sav) vefat edinceye kadar Ramazanın son on gününde i'tikafa girer ve şöyle buyururdu: 'Kadir gecesini Ramazanın son on gününde   arayın'.<br>(Müslim, İ'tikaf 5, (1172))";
+gunun_sozu[17] = "Resulullah (sav) vefat edinceye kadar Ramazanın son on gününde i'tikafa girer ve şoyle buyururdu: 'Kadir gecesini Ramazanın son on gününde   arayın'.<br>(Müslim, İ'tikaf 5, (1172))";
 gunun_sozu[18] = "Resulullah (sav) 'Kadir gecesi Ramazan'ın neresinde?” diye sorulmuştu. O, “Ramazanın tamamında!' diye gunun_sozu verdi.<br>(Ebu Davud, Salat, 824, (1387))";
 gunun_sozu[19] = "Kadir gecesini, kim sevabına inanıp onu kazanmak ümidiyle ihya ederse, geçmiş günahları affedilir.<br>(Müslim, Müsafirin 174, (769); Ebu Davud, Salat 318, (1371); Tirmizi, Savm 83)";
 gunun_sozu[20] = "Kişinin fitnesi ehlinde, malında, çocuğunda, nefsinde ve komşusundadır. Oruç, namaz, sadaka, emr-i bi'l-maruf ve nehy-i ani'l-münker bu fitneye  kefaret olur!<br>(Müslim, Fiten 17, (144), Tirmizi, Fiten 71, (2259))";
-gunun_sozu[21] = "Her şeyin bir baharı vardır, Kur’an’ın baharı da Ramazan ayıdır.<br>İmam Bakır (a.s)";
+gunun_sozu[21] = "Her şeyin bir baharı vardır, Kur’an’ın baharı da Ramazan ayıdır.<br>İmam Bakır (r.a)";
 gunun_sozu[22] = "Ramazanda Allah'i zikreden magfiret olunur. Ve o ayda Allah'dan dilekte bulunan kimse de mahrum edilmez.<br>Ravi: Hz. Cābir (r.a.)";
 gunun_sozu[23] = "Allah (z.c.hz.) Ramazanin her gecesi iftar zamaninda bir milyon kisiyi Cehennemden azad eder. Cuma'nin her saatinde de, hepsi cehennemlik olan yine bir milyon kisiyi Cehennemden azad eder.<br>Ravi: Hz. Ibni Abbas (r.anhuma)";
 gunun_sozu[24] = "Bir kimse hac ve umre etse de ayni sene icinde olse, Cennete girer. Kim Ramazan orucunu tutsa sonra olse Cennete girer.<br>Ravi: Hz. Ebū Said (r.a.)";
 gunun_sozu[25] = "Bir kimse Ramazan da inanarak ve sevabini umarak Kiyamul-leyl (teravih namazi) kilsa gecmis gunahi magfiret olur.<br>Ravi: Hz. Ebū Hureyre (r.a.)";
 gunun_sozu[26] = "'Ramazan' demeyin. Zira Ramazan Aziz ve Celil olan Allah'in isimlerinden bir isimdir. Lakin “Ramazan ayi” deyin.<br>Ravi: Hz. Ebū Hureyre (r.a.)";
 gunun_sozu[27] = "Recep ayı ekini ekme, Şaban ayı sulama, Ramazan ayı ise hasat zamanıdır.<br>Ebu Bekir El-Verrak";
-gunun_sozu[28] = "Oruç tutanın uykusu ibadet, susması tesbih, ameli kabul ve duası müstecab olur.<br>Resulullah (s.a.a)";
-gunun_sozu[29] = "En iyi (faziletli) cihad sıcak havada oruç tutmaktır.<br>İmam Sadık (a.s)";
-gunun_sozu[30] = "Üç amel Allah’ın rahmetindendir: Gece namazı kılmak, mu’min kardeşin halini sormak ve oruç tutmak.<br>Resulullah (s.a.a)";
-gunun_sozu[31] = "Allah-u Teala melekleri oruç tutanlara dua etmekle görevlendirmiştir.<br>Resulullah (s.a.a)";
-gunun_sozu[32] = "Oruç tutanın uykusu ibadet, susması tesbih, ameli kabul ve duası müstecab olur.<br>Resulullah (s.a.a)";
-gunun_sozu[33] = "Oruç tutanın duası reddedilmez<br>Resulullah (s.a.a)";
-gunun_sozu[34] = "Cennetin Reyyan adlı bir kapısı vardır; o kapıdan ancak oruç tutanlar girecektir.<br>Resulullah (s.a.a)";
-gunun_sozu[35] = "Oruç, cehennem ateşinden koruyan bir siperdir (kalkandır).<br>Resulullah (s.a.a)";
-gunun_sozu[36] = "Oruç tutanın duası iftar vakti kabul olur.<br>İmam Kazım (a.s)";
-gunun_sozu[37] = "Oruç tutan kimsenin iki mutluluğu vardır; iftar vakti ve Kıyamet günü.<br>Resulullah (s.a.a)";
-gunun_sozu[38] = "Her şeyin bir zekatı vardır, bedenin zekatı da oruçtur.<br>İmam Ali (a.s)";
-gunun_sozu[39] = "Allah, orucu ihlası sağlamlaştırmak için farz kılmıştır.<br>Hz. Fatıma (s.a.)";
-gunun_sozu[40] = "Bu ay Ramazan diye adlandırıldı; çünkü bu ay günahları temizler.<br>Resulullah (s.a.a)";
-gunun_sozu[41] = "Nefsimi elinde tutan Allah’a and olsun ki oruç tutan kimsenin ağzının kokusu Allah’ın yanında misk kokusundan daha iyidir.<br>Resulullah (s.a.a)";
-gunun_sozu[42] = "Kim ramazan ayını oruç tutar ve haramlardan sakınırsa, Allah onun geçmiş günahlarını affeder.<br>Resulullah (s.a.a)";
-gunun_sozu[43] = "En iyi (faziletli) cihad sıcak havada oruç tutmaktır.<br>İmam Sadık (a.s)";
-gunun_sozu[44] = "Gökyüzünün kapıları Ramazan ayının ilk gecesi açılır ve son gününün gecesine kadar kapanmaz.<br>Resulullah (s.a.a )";
-gunun_sozu[45] = "Cennet, her yıl ramazan ayının gelişiyle süslenip ziynetlenir.<br>Resulullah (s.a.a)";
-gunun_sozu[46] = "İnsanın başına bir bela (musibet) geldiği zaman oruç tutsun.<br>İmam Sadık (a.s)";
-gunun_sozu[47] = "Selam sana olsun ey Ramazan ayı ki, hiç bir ay  seninle fazilette yarışamaz.<br>İmam Zeynelabidin (a.s)";
-gunun_sozu[48] = "Cennet dört kişinin özlemini çeker,biri de ramazan ayında oruç tutandır.<br>Resulullah (s.a.a)";
-gunun_sozu[49] = "Ramazan ayı bütün ayların, Kadir gecesi ise bütün gecelerin efendisidir.<br>Resulullah (s.a.a)";
-gunun_sozu[50] = "Kim Ramazan ayını oruçlu geçirir ve haramlardan ve iftiradan sakınırsa, Allah ondan razı olur ve cenneti ona farz kılar.<br>Resulullah (s.a.a)";
-gunun_sozu[51] = "Ramazan ayı öyle bir aydır ki, başlangıcı rahmet, ortası mağfiret ve sonu Cehennem ateşinden kurtulmadır.<br>Resulullah (s.a.a)";
-gunun_sozu[52] = "Oruç, kul ile Yaradanı arasında bir ibadettir, Allah’tan başka kimse onu bilemez.<br>İmam Ali (a.s)";
-gunun_sozu[53] = "Oruç sabrın yarısıdır.<br>Resulullah ( s.a.a.)";
-gunun_sozu[54] = "Oruç tut; çünkü oruç gibi bir ibadet yoktur.<br>Resulullah (s.a.a)";
-gunun_sozu[55] = "İslam beş temel üzerine kurulmuştur; namaz, zekat, hacc, oruç, velayet.<br>İmam Ali (a.s)";
-gunun_sozu[56] = "Bir veya iki gün öncesinden oruç tutmak suretiyle sakın Ramazanın önüne geçmeyiniz. Bir kimsenin âdet edindiği bir orucu tutması bundan müstesnadır. Böyle bir kimse o orucunu varsın tutsun' buyurmuştur.<br>Resulüllah (a.s.)";
-gunun_sozu[57] = "Allah Resulü (a.s.): 'Bilâl ezanı gece okuyor. Siz, İbn. Ümmü Mektum'un ezanını işitinceye kadar yiyip içiniz' buyurmuştur.<br>(Sahih-i Müslim-1827)";
-gunun_sozu[58] = "Resulüllah (a.s.): 'İnsanlar iftar yapmakta (sünnet vechile) acele davrandıkları müddetçe daima hayır üzeredirler' buyurmuştur.<br>(Sahih-i Müslim-1838)";
+gunun_sozu[28] = "Oruç tutanın uykusu ibadet, susması tesbih, ameli kabul ve duası müstecab olur.<br>Resulullah (s.a.v)";
+gunun_sozu[29] = "En iyi (faziletli) cihad sıcak havada oruç tutmaktır.<br>İmam Sadık (r.a)";
+gunun_sozu[30] = "Üç amel Allah’ın rahmetindendir: Gece namazı kılmak, mu’min kardeşin halini sormak ve oruç tutmak.<br>Resulullah (s.a.v)";
+gunun_sozu[31] = "Allah-u Teala melekleri oruç tutanlara dua etmekle gorevlendirmiştir.<br>Resulullah (s.a.v)";
+gunun_sozu[32] = "Oruç tutanın uykusu ibadet, susması tesbih, ameli kabul ve duası müstecab olur.<br>Resulullah (s.a.v)";
+gunun_sozu[33] = "Oruç tutanın duası reddedilmez<br>Resulullah (s.a.v)";
+gunun_sozu[34] = "Cennetin Reyyan adlı bir kapısı vardır; o kapıdan ancak oruç tutanlar girecektir.<br>Resulullah (s.a.v)";
+gunun_sozu[35] = "Oruç, cehennem ateşinden koruyan bir siperdir (kalkandır).<br>Resulullah (s.a.v)";
+gunun_sozu[36] = "Oruç tutanın duası iftar vakti kabul olur.<br>İmam Kazım (r.a)";
+gunun_sozu[37] = "Oruç tutan kimsenin iki mutluluğu vardır; iftar vakti ve Kıyamet günü.<br>Resulullah (s.a.v)";
+gunun_sozu[38] = "Her şeyin bir zekatı vardır, bedenin zekatı da oruçtur.<br>İmam Ali (r.a)";
+gunun_sozu[39] = "Allah, orucu ihlası sağlamlaştırmak için farz kılmıştır.<br>Hz. Fatıma (r.a)";
+gunun_sozu[40] = "Bu ay Ramazan diye adlandırıldı; çünkü bu ay günahları temizler.<br>Resulullah (s.a.v)";
+gunun_sozu[41] = "Nefsimi elinde tutan Allah’a and olsun ki oruç tutan kimsenin ağzının kokusu Allah’ın yanında misk kokusundan daha iyidir.<br>Resulullah (s.a.v)";
+gunun_sozu[42] = "Kim ramazan ayını oruç tutar ve haramlardan sakınırsa, Allah onun geçmiş günahlarını affeder.<br>Resulullah (s.a.v)";
+gunun_sozu[43] = "En iyi (faziletli) cihad sıcak havada oruç tutmaktır.<br>İmam Sadık (r.a)";
+gunun_sozu[44] = "Gokyüzünün kapıları Ramazan ayının ilk gecesi açılır ve son gününün gecesine kadar kapanmaz.<br>Resulullah (s.a.v )";
+gunun_sozu[45] = "Cennet, her yıl ramazan ayının gelişiyle süslenip ziynetlenir.<br>Resulullah (s.a.v)";
+gunun_sozu[46] = "İnsanın başına bir bela (musibet) geldiği zaman oruç tutsun.<br>İmam Sadık (r.a)";
+gunun_sozu[47] = "Selam sana olsun ey Ramazan ayı ki, hiç bir ay  seninle fazilette yarışamaz.<br>İmam Zeynelabidin (r.a)";
+gunun_sozu[48] = "Cennet dort kişinin ozlemini çeker,biri de ramazan ayında oruç tutandır.<br>Resulullah (s.a.v)";
+gunun_sozu[49] = "Ramazan ayı bütün ayların, Kadir gecesi ise bütün gecelerin efendisidir.<br>Resulullah (s.a.v)";
+gunun_sozu[50] = "Kim Ramazan ayını oruçlu geçirir ve haramlardan ve iftiradan sakınırsa, Allah ondan razı olur ve cenneti ona farz kılar.<br>Resulullah (s.a.v)";
+gunun_sozu[51] = "Ramazan ayı oyle bir aydır ki, başlangıcı rahmet, ortası mağfiret ve sonu Cehennem ateşinden kurtulmadır.<br>Resulullah (s.a.v)";
+gunun_sozu[52] = "Oruç, kul ile Yaradanı arasında bir ibadettir, Allah’tan başka kimse onu bilemez.<br>İmam Ali (r.a)";
+gunun_sozu[53] = "Oruç sabrın yarısıdır.<br>Resulullah ( s.a.v.)";
+gunun_sozu[54] = "Oruç tut; çünkü oruç gibi bir ibadet yoktur.<br>Resulullah (s.a.v)";
+gunun_sozu[55] = "İslam beş temel üzerine kurulmuştur; namaz, zekat, hacc, oruç, velayet.<br>İmam Ali (r.a)";
+gunun_sozu[56] = "Bir veya iki gün oncesinden oruç tutmak suretiyle sakın Ramazanın onüne geçmeyiniz. Bir kimsenin âdet edindiği bir orucu tutması bundan müstesnadır. Boyle bir kimse o orucunu varsın tutsun' buyurmuştur.<br>Resulüllah (s.a.v)";
+gunun_sozu[57] = "Allah Resulü (r.a.): 'Bilâl ezanı gece okuyor. Siz, İbn. Ümmü Mektum'un ezanını işitinceye kadar yiyip içiniz' buyurmuştur.<br>(Sahih-i Müslim-1827)";
+gunun_sozu[58] = "Resulüllah (r.a.): 'İnsanlar iftar yapmakta (sünnet vechile) acele davrandıkları müddetçe daima hayır üzeredirler' buyurmuştur.<br>(Sahih-i Müslim-1838)";
 gunun_sozu[59] = "Kim Allah Teala yolunda bir gün oruç tutsa, Allah onunla ateş arasına, genişliği sema ile arz arasını tutan bir hendek kılar.<br>(Tirmizi, Cihad 3, (1624)";
-gunun_sozu[60] = "Her şeyin bir zekatı vardır, bedenin zekatı da oruçtur.<br>İmam Ali (a.s)";
-
-	
+gunun_sozu[60] = "Her şeyin bir zekatı vardır, bedenin zekatı da oruçtur.<br>İmam Ali (r.a)";	
