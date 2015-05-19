@@ -677,11 +677,23 @@ function idate(){
 		document.getElementById('title_yatsi').innerHTML = gun_29[7];
 		imsak=gun_29[1];
 		iftar=gun_29[6];
+		bi_sonraki_imsak="7/17/2015" + " " + gun_30[1];
+		imsak_aksam=gun_30[1];
+		gunun_sozu_bir=gunun_sozu[57];
+		gunun_sozu_iki=gunun_sozu[58];
+	break;
+	case "7/17/2015": 
+		document.getElementById('title_imsak').innerHTML = gun_30[1];
+		document.getElementById('title_ogle').innerHTML  = gun_30[4];
+		document.getElementById('title_ikindi').innerHTML= gun_30[5];
+		document.getElementById('title_aksam').innerHTML = gun_30[6];
+		document.getElementById('title_yatsi').innerHTML = gun_30[7];
+		imsak=gun_30[1];
+		iftar=gun_30[6];
 		bi_sonraki_imsak="7/17/2015" + " " + "23:00:00";
 		imsak_aksam="23:00:00";
 		gunun_sozu_bir=gunun_sozu[59];
 		gunun_sozu_iki=gunun_sozu[60];
-		
 	break;
 	}
 }	
