@@ -211,7 +211,7 @@ function gerisayim(){
 			console.log("ramazan Daha Başlamadı");		
 			show_flag=1;
 			sayac_durumu ="Ramazan";
-			sayac_ne_sayiyor= "06.18.2015";
+			sayac_ne_sayiyor= "18.06.2015";
 			var kaldi = ramazan_baslama_tarihi.getTime()-now_time.getTime();
 			if (kaldi <= 0) {
 				clearTimeout(timer);
