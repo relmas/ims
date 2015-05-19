@@ -1,0 +1,190 @@
+html, body{margin:0;padding:0;height:100%;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#settings{
+	border:0px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+img a, img a:link, img a:active, img a:visited, img a:hover{
+border:0px;
+}
+
+#entry{
+	display:none;
+	width:100%;
+	height:100%;
+	background-color:#80e1cc;
+}
+
+#entry_ust{width:100%; height:50%;background-color: #ecf0f1;background-image:url(../img/mosque.jpg);background-size:80% 80%;background-repeat:no-repeat;background-position:center;}
+#entry_alt{width:100%; height:50%; background-color: #ecf0f1;text-align:center;}
+#entry_kontrol{width:70%; height:80%;margin:auto;background-color: #ecf0f1;text-align:center;}
+#select_city{text-align:center;}
+
+ul, li{margin:0;padding:0;list-style:none;display:inline;}
+
+#board{width:100%;height:100%;overflow:hidden;display:none;}
+
+#case{width:100%;height:7%;font-family: "Trebuchet MS", Helvetica, sans-serif;background-color: #ecf0f1;line-height:50px;text-align:center;z-index:2;}
+
+#case img{position:absolute;right:5%;margin-top:5px;}
+
+span.city{font-size:25px;color:#666666;margin-left:20px;line-height:100%;font-weight:bold;}
+
+#scene{position:relative;left:0;width:2400px;height:83%;}
+
+#page_one{float:left;width:800px;height:100%;background-color:#ecf0f1;}
+#page_two{text-align:center;float:left;width:800px;height:100%;background-color:#ecf0f1;}
+#page_three{float:left;width:800px;height:100%;background-color:#ecf0f1;}
+
+#bar{width:100%;height:10%;}
+
+.bar_one{float:left;width:33.3333333%;height:100%;background-color:#ecf0f1;background-image:url(../img/hadis.png);background-repeat:no-repeat;background-position:center;}
+.bar_two{float:left;width:33.3333333%;height:100%;background-color:#ecf0f1;background-image:url(../img/sayac.png);background-repeat:no-repeat;background-position:center;}
+.bar_three{float:left;width:33.3333333%;height:100%;background-color:#ecf0f1;background-image:url(../img/vakit.png);background-repeat:no-repeat;background-position:center;}
+
+.active{border-top:3px solid #cccccc;}
+
+ /* Ic sayfalar */
+ 
+#kalan_sure_yazi{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size: 20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:10%;}
+#kalan_sure{text-align:center;margin:auto;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:20px;margin-top:10%;}
+#kalan_gun{text-align:center;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:1.0em;margin-top:5%;}
+#saat_kucuk{font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:0.5em;margin-top:3%;}
+
+#vakit_yazi{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:15%;}
+#sayilan_vakit{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size: 2.0em;color:#666666;text-align:center;margin-top:5.2%;}
+
+#hadis{width:90%;padding-left:5%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size:1.1em;color:#666666;text-decoration:justify;margin-top:10%;padding-bottom:5px;line-height: 1.4;}
+#hadis_bar{width:100%;height:30%;font-family:"Times New Roman";color:#7781a1;font-style:italic;font-size:2.0em;padding-left:5%;margin-top:5px;line-height: 1.2;}
+
+#imsak{width:100%;height:19%;color:#dd90fd;}
+#ogle{width:100%;height:19%;color:#cb64f6;}
+#ikindi{width:100%;height:19%;color:#b558dc;}
+#aksam{width:100%;height:19%;color:#a45dc2;}
+#yatsi{width:100%;height:20%;color:#8e44ad;}
+
+.title_vakit{float:left;width:49%;height:100%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size: 1.3em;text-align:right;line-height:100px;}
+.title_sayac{float:left;width:46%;height:100%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size:2.2em;color:#666666;text-align:left;margin-left:5%;line-height:100px;}
+
+#saat{
+	font-size:3.0em;
+	color:#666666; 
+}
+#dakika{
+	font-size:3.0em;
+	color:#666666;	
+}
+#saniye{
+	font-size:3.0em;
+	color:#666666;
+}
+
+ /* Media sorgulari */
+ 
+@media (min-width: 980px) {
+#scene{left:0;width:2940px;height:83%;}
+#page_one{float:left;width:980px;height:100%;background-color:#ecf0f1;}
+#page_two{text-align:center;float:left;width:980px;height:100%;background-color:#ecf0f1;}
+#page_three{float:left;width:980px;height:100%;background-color:#ecf0f1;}
+#bar{width:100%;height:10%;}
+#kalan_sure_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:10%;}
+#kalan_sure{text-align:center;margin:auto;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:20px;margin-top:10%;}
+#saat_kucuk{font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:1.5em;margin-top:11%;}
+#vakit_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:5%;}
+#sayilan_vakit{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size:2.0em;text-align:center;margin-top:5.2%;}
+#hadis{width:90%;padding-left:5%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size:1.1em;color:#666666;text-decoration:justify;padding-bottom:5px;line-height: 1.4;}
+#hadis_bar{width:100%;height:30%;font-family:"Times New Roman";color:#7781a1;font-style:italic;font-size:2.0em;padding-left:5%;margin-top:5px;line-height: 1.2;}
+}
+ 
+@media (min-width: 768px) and (max-width: 979px) {
+#scene{left:0;width:2937px;height:83%;}
+#page_one{float:left;width:979px;height:100%;background-color:#ecf0f1;}
+#page_two{text-align:center;float:left;width:979px;height:100%;background-color:#ecf0f1;}
+#page_three{float:left;width:979px;height:100%;background-color:#ecf0f1;}
+#bar{width:100%;height:10%;}
+#kalan_sure_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:10%;}
+#kalan_sure{text-align:center;margin:auto;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:20px;margin-top:10%;}
+#saat_kucuk{font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:1.5em;margin-top:10%;}
+#vakit_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:5%;}
+#sayilan_vakit{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size:2.0em;text-align:center;margin-top:5.2%;}
+#hadis{width:90%;padding-left:5%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size:1.1em;color:#666666;text-decoration:justify;padding-bottom:5px;line-height: 1.4;}
+#hadis_bar{width:100%;height:30%;font-family:"Times New Roman";color:#7781a1;font-style:italic;font-size:2.0em;padding-left:5%;margin-top:5px;line-height: 1.2;}
+}
+ 
+@media (max-width: 767px) {
+#scene{left:0;width:2301px;height:83%;}
+#page_one{float:left;width:767px;height:100%;background-color:#ecf0f1;}
+#page_two{text-align:center;float:left;width:767px;height:100%;background-color:#ecf0f1;}
+#page_three{float:left;width:767px;height:100%;background-color:#ecf0f1;}
+#bar{width:100%;height:10%;}
+#kalan_sure_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:10%;}
+#kalan_sure{text-align:center;margin:auto;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:20px;margin-top:10%;}
+#saat_kucuk{font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:1.1em;margin-top:9%;}
+#vakit_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:5%;}
+#sayilan_vakit{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size:2.0em;text-align:center;margin-top:5.2%;}
+#hadis{width:90%;padding-left:5%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size:1.1em;color:#666666;text-decoration:justify;padding-bottom:5px;line-height: 1.4;}
+#hadis_bar{width:100%;height:30%;font-family:"Times New Roman";color:#7781a1;font-style:italic;font-size:2.0em;padding-left:5%;margin-top:5px;line-height: 1.2;}
+}
+ 
+@media (max-width: 480px) {
+#scene{left:0;width:1440px;height:83%;}
+#page_one{float:left;width:480px;height:100%;background-color:#ecf0f1;}
+#page_two{text-align:center;float:left;width:480px;height:100%;background-color:#ecf0f1;}
+#page_three{float:left;width:480px;height:100%;background-color:#ecf0f1;}
+#bar{width:100%;height:10%;}
+#kalan_sure_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:10%;}
+#kalan_sure{text-align:center;margin:auto;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:20px;margin-top:10%;}
+#saat_kucuk{font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:1.0em;margin-top:7%;}
+#vakit_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:5%;}
+#sayilan_vakit{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size:2.0em;text-align:center;margin-top:5.2%;}
+#hadis{width:90%;padding-left:5%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size:1.1em;color:#666666;text-decoration:justify;padding-bottom:5px;line-height: 1.4;}
+#hadis_bar{width:100%;height:30%;font-family:"Times New Roman";color:#7781a1;font-style:italic;font-size:2.0em;padding-left:5%;margin-top:5px;line-height: 1.2;}
+}
+
+@media (min-width: 320px) and (max-width: 360px) {
+#scene{left:0;width:1440px;height:83%;}
+#page_one{float:left;width:360px;height:100%;background-color:#ecf0f1;}
+#page_two{text-align:center;float:left;width:360px;height:100%;background-color:#ecf0f1;}
+#page_three{float:left;width:360px;height:100%;background-color:#ecf0f1;}
+#bar{width:100%;height:10%;}
+#bar{width:100%;height:10%;}
+#kalan_sure_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:10%;}
+#kalan_sure{text-align:center;margin:auto;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:20px;margin-top:10%;}
+#saat_kucuk{font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:1.0em;margin-top:7%;}
+#vakit_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:5%;}
+#sayilan_vakit{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size:2.0em;text-align:center;margin-top:5.2%;}
+#hadis{width:90%;padding-left:5%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size:1.1em;color:#666666;text-decoration:justify;padding-bottom:5px;line-height: 1.4;}
+#hadis_bar{width:100%;height:30%;font-family:"Times New Roman";color:#7781a1;font-style:italic;font-size:2.0em;padding-left:5%;margin-top:5px;line-height: 1.2;}
+}
+
+@media (max-width: 320px) {
+#scene{left:0;width:960px;height:83%;}
+#page_one{float:left;width:320px;height:100%;background-color:#ecf0f1;}
+#page_two{text-align:center;float:left;width:320px;height:100%;background-color:#ecf0f1;}
+#page_three{float:left;width:320px;height:100%;background-color:#ecf0f1;}
+#bar{width:100%;height:10%;}
+#kalan_sure_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:10%;}
+#kalan_sure{text-align:center;margin:auto;font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:20px;margin-top:10%;}
+#saat_kucuk{font-family:"Trebuchet MS", Helvetica, sans-serif;color:#666666;font-size:0.9em;margin-top:3%;}
+#vakit_yazi{font-family: Trebuchet MS;font-size:20px;color:#749c7a;font-weight:bold;text-align:center;margin-top:7%;}
+#sayilan_vakit{font-family: "Trebuchet MS", Helvetica, sans-serif;font-size:2.0em;text-align:center;margin-top:1.2%;}
+#hadis{width:90%;padding-left:5%;font-family:"Trebuchet MS", Helvetica, sans-serif;font-size:1.1em;color:#666666;padding-bottom:5%;text-decoration:justify;margin-top:10%;line-height: 1.4;}
+#hadis_bar{width:100%;height:30%;font-family:"Times New Roman";color:#7781a1;font-style:italic;font-size:2.0em;margin-top:5%;padding-left:5%;line-height: 1.2;}
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+		<link href="css/style.css" rel="stylesheet">
+		<script src="js/jquery-1.10.1.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/jscript.js"></script>
+		
+		<script type="text/javascript">
+
+		</script>
+		
+	</head>
+  
+	<body>
+	
+	<div id="board">
+	
+		<div id="case">
+			<span id="city" class="city"></span><img id="settings" onClick="div_change_back()" src="img/settings.png">
+		</div>
+	
+		<div id="scene">
+		
+			<div id="page_one">
+				<div id="hadis"></div>
+				<div id="hadis_bar">--günün hadisi</div>
+			</div>
+			
+			<div id="page_two">
+				<div id="kalan_sure_yazi"><span id="sayac_durumu"></span> kalan süre</div><br>			
+						<p id="saat"></p>
+						<p id="saat_kucuk">saat</p>
+						<p id="dakika"></p>
+						<p id="saat_kucuk">dakika</p>
+						<p id="saniye"></p>
+						<p id="saat_kucuk">saniye</p>
+					<div id="vakit_yazi"><span id="sayac_durumu_second"></span> zamanı</div><br>
+					<div id="sayilan_vakit"></div>
+			</div>
+			
+			<div id="page_three">
+			
+				<div id="imsak">
+					<div class="title_vakit">İmsak vakti :</div>
+					<div class="title_sayac" id="title_imsak"></div>
+				</div>
+				<div id="ogle">
+					<div class="title_vakit">Öğle vakti :</div>
+					<div class="title_sayac" id="title_ogle"></div>
+				</div>
+				<div id="ikindi">
+					<div class="title_vakit">İkindi vakti :</div>
+					<div class="title_sayac" id="title_ikindi"></div>
+				</div>
+				<div id="aksam">
+					<div class="title_vakit">Akşam vakti :</div>
+					<div class="title_sayac" id="title_aksam"></div>
+				</div>
+				<div id="yatsi">
+					<div class="title_vakit">Yatsı vakti :</div>
+					<div class="title_sayac" id="title_yatsi"></div>
+				</div>
+			
+			</div>
+		
+		</div>
+		
+		<div id="bar">
+			<ul class="bar">
+				<li class="bar_one" onClick="goto('#page_one', this); return false"></li>
+				<li class="bar_two" class="active" onClick="goto('#page_two', this); return false"></li>
+				<li class="bar_three" onClick="goto('#page_three', this); return false"></li>
+			</ul>
+		</div>
+	
+	</div>
+	<div id="entry">
+	
+		<div id="entry_ust"></div>
+		<div id="entry_alt">
+			<div id="entry_kontrol">
+				<p id="bilgi">Bağlantı Kontrol Ediliyor.. </p>
+				<button class="btn disabled" onClick="giris_yap()" id="girisyap">Otomatik -> Giriş yap</button><br><br>
+				<p id="bilgi">veya</p>
+				<div id="select_city">
+					<select name="selectbox" id="selectbox">
+						<option value="adana">Adana</option>
+						<option value="adiyaman">Adıyaman</option>
+						<option value="afyon">Afyon</option>
+						<option value="agri">Ağrı</option>
+						<option value="aksaray">Aksaray</option>
+						<option value="amasya">Amasya</option>
+						<option value="ankara">Ankara</option>
+						<option value="antalya">Antalya</option>
+						<option value="ardahan">Ardahan</option>
+						<option value="artvin">Artvin</option>
+						<option value="aydin">Aydin</option>
+						<option value="balikesir">Balıkesir</option>
+						<option value="bartin">Bartın</option>
+						<option value="batman">Batman</option>
+						<option value="bayburt">Bayburt</option>
+						<option value="bilecik">Bilecik</option>
+						<option value="bingol">Bingöl</option>
+						<option value="bitlis">Bitlis</option>
+						<option value="bolu">Bolu</option>
+						<option value="burdur">Burdur</option>
+						<option value="bursa">Bursa</option>
+						<option value="canakkale">Çanakkale</option>
+						<option value="cankiri">Çankırı</option>
+						<option value="corum">Çorum</option>
+						<option value="denizli">Denizli</option>
+						<option value="diyarbakir">Diyarbakır</option>
+						<option value="duzce">Düzce</option>
+						<option value="edirne">Edirne</option>
+						<option value="elazig">Elazig</option>
+						<option value="erzincan">Erzincan</option>
+						<option value="erzurum">Erzurum</option>
+						<option value="eskisehir">Eskişehir</option>
+						<option value="gaziantep">Gaziantep</option>
+						<option value="giresun">Giresun</option>
+						<option value="gumushane">Gümüşhane</option>
+						<option value="hakkari">Hakkari</option>
+						<option value="hatay">Hatay</option>
+						<option value="igdir">Iğdır</option>
+						<option value="isparta">Isparta</option>
+						<option value="istanbul">Istanbul</option>
+						<option value="izmir">İzmir</option>
+						<option value="kahramanmaras">Kahramanmaraş</option>
+						<option value="karabuk">Karabük</option>
+						<option value="karaman">Karaman</option>
+						<option value="kars">Kars</option>
+						<option value="kastamonu">Kastamonu</option>
+						<option value="kayseri">Kayseri</option>
+						<option value="kilis">Kilis</option>
+						<option value="kirikkale">Kırıkkale</option>
+						<option value="kirklareli">Kırklareli</option>
+						<option value="kocaeli">Kocaeli</option>
+						<option value="konya">Konya</option>
+						<option value="kutahya">Kütahya</option>
+						<option value="kirsehir">Kırşehir</option>
+						<option value="malatya">Malatya</option>
+						<option value="manisa">Manisa</option>
+						<option value="mardin">Mardin</option>
+						<option value="mugla">Muğla</option>
+						<option value="mus">Muş</option>
+						<option value="nevsehir">Nevşehir</option>
+						<option value="nigde">Niğde</option>
+						<option value="ordu">Ordu</option>
+						<option value="osmaniye">Osmaniye</option>
+						<option value="rize">Rize</option>
+						<option value="sakarya">Sakarya</option>
+						<option value="samsun">Samsun</option>
+						<option value="sanliurfa">Şanlıurfa</option>
+						<option value="siirt">Siirt</option>
+						<option value="sinop">Sinop</option>
+						<option value="sirnak">Şırnak</option>
+						<option value="sivas">Sivas</option>
+						<option value="tekirdag">Tekirdağ</option>
+						<option value="tokat">Tokat</option>
+						<option value="trabzon">Trabzon</option>
+						<option value="tunceli">Tunceli</option>
+						<option value="usak">Uşak</option>
+						<option value="van">Van</option>
+						<option value="yalova">Yalova</option>
+						<option value="icel">İçel</option>
+						<option value="yozgat">Yozgat</option>
+						<option value="zonguldak">Zonguldak</option>
+					</select><br>
+				<button class="btn" onClick="select_box()">Seçime göre -> Giriş yap</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	</body>
+
+</html>
