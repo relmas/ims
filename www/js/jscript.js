@@ -677,7 +677,7 @@ function idate(){
 		document.getElementById('title_yatsi').innerHTML = gun_29[7];
 		imsak=gun_29[1];
 		iftar=gun_29[6];
-		bi_sonraki_imsak="7/16/2015" + " " + "23:00:00";
+		bi_sonraki_imsak="7/17/2015" + " " + "23:00:00";
 		imsak_aksam="23:00:00";
 		gunun_sozu_bir=gunun_sozu[59];
 		gunun_sozu_iki=gunun_sozu[60];
